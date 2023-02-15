@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0 auto 10px;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+        }
+        /* Start Qiz Section */
+        .quiz {
+            border: 1px solid;
+            border-color: transparent #949292 #949292 #949292;
+            background-color: #e9e9e9;
+            min-width: 500px;
+            max-width: 70%;
+            padding: 0 20px 60px;
+            position: relative;
+        }
+        .quiz .title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: #e9e9e9;
+            padding: 10px;
+            box-shadow: 1px 1px 4px 4px #ddd;
+            width: 100%;
+        }
+        .quiz .question {
+            border: 1px solid #949292;
+            background-color: #e9e9e9;
+            margin-bottom: 20px;
+            padding: 10px;
+            line-height: 2em;
+            position: relative;
+            width: 100%;
+            margin-left: -100%;
+            transform: translateX(-100%);
+        }
+        .quiz .question .point {
+            position: absolute;
+            text-align: center;
+            border: 1px solid;
+            border-color: transparent transparent #949292 #949292;
+            background-color: #e9e9e9;
+            width: 100px;
+            right: 0;
+            top: 0;
+        }
+        .quiz .question .re_sultion {
+            position: absolute;
+            text-align: center;
+            border: 1px solid;
+            border-color: transparent transparent #949292 #949292;
+            background-color: #f0f0f0;
+            padding: 0 5px;
+            right: 100px;
+            top: 0;
+            cursor: pointer;
+        }
+        .quiz .question p {
+            display: block;
+            color: #393939;
+            text-indent: 20px;
+        }
+        .quiz .question button {
+            font-size: 15px;
+            padding: 5px 10px;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #000;
+            border: 1px solid #949292;
+            border-radius: 2px;
+            outline: none;
+        }
+        /* End Qiz Section */
+
+        /* Start Result Section */
+        .result {
+            border: 1px solid #949292;
+            background-color: #e9e9e9;
+            min-width: 700px;
+            width: fit-content;
+            line-height: 1.6em;
+            display: none;
+
+        }
+
+        .result .main_re{
+            border-bottom: 1px solid #949292;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result .main_re .text{
+            margin: auto 0;
+        }
+
+        .result .main_re img {
+            margin: auto 0;
+            width: 150px;
+        }
+
+        .result span{
+            color: #949292;
+        }
+
+        .result .contain {
+            display: flex;
+        }
+
+        .result .contain p {
+            width: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            border: 1px solid;
+            padding: 5px 10px;
+        }
+
+        .result .contain p span {
+            border-top: 1px solid #949292;
+            width: 100%;
+            margin: auto;
+        }
+
+        /* End Result Section */
+        input{
+            font-size: 18px;
+            padding: 15px 30px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #f00;
+            border: 1px solid #949292;
+            border-radius: 2px;
+            outline: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Html Code -->
+    <!-- Start Qiz Section -->
+    <div class="quiz">
+        <div class="title">Exam</div>
+        <div class="question qu0">
+            <div class="point">
+                <span>10 points</span>
+            </div>
+            <div class="re_sultion">
+                <span>Re-solution</span>
+            </div>
+            <h4>Question 1:</h4>
+            <p>What is the Capital of Egypt...?</p>
+            <button>Cairo</button>
+            <button>Riyadh</button>
+            <button>Khartoum</button>
+            <button>Oman</button>
+        </div>
+        <div class="question qu1">
+            <div class="point">
+                <span>10 points</span>
+            </div>
+            <div class="re_sultion">
+                Re-solution
+            </div>
+            <h4>Question 2:</h4>
+            <p>What is the Capital of Saudi Arabia...?</p>
+            <button>Mecca</button>
+            <button>Medina</button>
+            <button>Jeddah</button>
+            <button>Riyadh</button>
+        </div>
+        <div class="question qu2">
+            <div class="point">
+                <span>10 points</span>
+            </div>
+            <div class="re_sultion">
+                <span>Re-solution</span>
+            </div>
+            <h4>Question 3:</h4>
+            <p>What is the Capital of Palestine...?</p>
+            <button>AL-Quds</button>
+            <button>Rafah</button>
+            <button>Riyadh</button>
+            <button>Cairo</button>
+        </div>
+        <div class="question qu3">
+            <div class="point">
+                <span>10 points</span>
+            </div>
+            <div class="re_sultion">
+                <span>Re-solution</span>
+            </div>
+            <h4>Question 3:</h4>
+            <p>What is the Capital of UAE...?</p>
+            <button>AL-Quds</button>
+            <button>Abu Dhabi</button>
+            <button>Riyadh</button>
+            <button>Cairo</button>
+        </div>
+        <input type="submit" value="End Exam">
+    </div>
+    <!-- End Qiz Section -->
+
+    <!-- Start Result Section -->
+    <div class="result">
+        <div class="main_re">
+            <div class="text">
+                <p>Name: <span class="name"></span></p>
+                <p>reslut: <span class="q4">0</span></p>
+                <p>P.C: <span class="q5">0</span></p>
+            </div>
+            <img src="avatar-06.png" alt="">
+        </div>
+        <div class="contain">
+            <p>Total question <span class="q0">0</span> </p>
+            <p>Total question is sultion <span class="q1">0</span> </p>
+            <p>Total question is correct <span class="q2">0</span> </p>
+            <p>Total question is wrong <span class="q3">0</span> </p>
+            <p>The result <span class="q4">0</span> </p>
+        </div>
+    </div>
+    <!-- End Result Section -->
+
+
+
+    <!-- Start jQuery -->
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+
+        // This Result is correct
+        let qu = ["Cairo","Riyadh","AL-Quds","Abu Dhabi"];
+        let degree=10;
+        $(document).ready(function(){
+            $(".result .name").html("Ibrahim Hassan Kassab")
+
+            $(".q0").html( qu.length);
+            
+            $("button").click(function(){
+                $(this).css({"background-color":"#949292","color":"#fff"})
+            })
+
+
+            for (let i =0; i < qu.length ; i++) {
+
+                const a =".qu"+""+[i]+""+" "+"button";
+                const b =".qu"+""+[i]+""+" "+"p";
+                const c =".qu"+""+[i+1]+"";
+
+                $(".qu0").animate({"marginLeft":"100%"},1000);
+
+                $(a).click(function(){
+                    $(c).animate({"marginLeft":"100%"},1000);
+
+                    const value=$(this).html();
+                    $(b).append(value);
+
+                    const tot_sul= Number($(".q1").html());
+                    $(".q1").html(tot_sul + 1)
+
+                    const correct= Number($(".q2").html());
+                    const wrong= Number($(".q3").html());
+                    if (value === qu[i]) {
+                        $(".q2").html(correct + 1)
+                        $(a).attr("disabled","disabled").css("cursor","auto");
+
+                        const reslut=Number($(".q4").html());
+                        $(".q4").html(reslut + degree);
+                        $(".q5").html(((reslut + degree) * 100) / (qu.length * degree) + "%");
+                    }else {
+                        $(".q3").html(wrong + 1)
+                        $(a).attr("disabled","disabled").css("cursor","auto");
+                    };
+                });
+            };
+
+
+            $("input").click(function(){
+
+                $(".quiz").slideUp(1000)
+
+                setTimeout(function(){
+                    $(".result").slideDown(1000)
+                },2000)
+            });
+
+        });
+    </script>
+</body>
+</html>
